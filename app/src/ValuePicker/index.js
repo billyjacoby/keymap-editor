@@ -164,9 +164,24 @@ function ValuePicker (props) {
                 __html: fuzzysort.highlight(result.search)
               }} />
             ) : (
+              <>
+
+              <div style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+              }}>
               <span>
                 {result[searchKey]}
               </span>
+              {
+                result?.name && 
+              <span title={result?.description ?? result.name}>
+                {result.name}
+              </span>
+              }
+              </div>
+              </>
             )}
           </li>
         ))}
